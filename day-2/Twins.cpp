@@ -1,27 +1,25 @@
 #include <iostream>
-#include <bits/stdc++.h>
-#include <vector>
 using namespace std;
 
-int main(){
-  int n,minCoins,totalSum,partialCoinSum;
-  minCoins=totalSum=partialCoinSum=0;
-  vector<int> v;
-  cin >>n;
-  for(int i=0;i<n;i++){
-    int temp;
-    cin >>temp;
-    v.push_back(temp);
-    sort(v.begin(),v.end());
-    totalSum+=temp;
-  }
-  for(int i=n-1;i>=0;i--){
-    partialCoinSum+=v[i];
-    minCoins+=1;
-    if(partialCoinSum>(totalSum-partialCoinSum)){
-      cout<<minCoins;
-      break;
+int main()
+{
+    int n, x, y, z, xsum(0), ysum(0), zsum(0);
+    cin >> n;
+    while (n--)
+    {
+        cin >> x >> y >> z;
+        xsum += x;
+        ysum += y;
+        zsum += z;
     }
-  }
-  return 0;
+    if (xsum == 0 && ysum == 0 && zsum == 0)
+    {
+        cout << "YES" << endl;
+    }
+    else
+    {
+        cout << "NO" << endl;
+    }
+
+    return 0;
 }
